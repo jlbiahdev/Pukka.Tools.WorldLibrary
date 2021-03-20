@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Pukka.Tools.Countries.Utils
+namespace CyranoLibrary.WorldGeoloc.Utils
 {
     internal static class JsonFileLoader
     {

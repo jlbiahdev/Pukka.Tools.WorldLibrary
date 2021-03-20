@@ -1,4 +1,4 @@
-﻿namespace Pukka.Tools.Countries.Model
+﻿namespace CyranoLibrary.WorldGeoloc.Model
 {
     public class City
     {

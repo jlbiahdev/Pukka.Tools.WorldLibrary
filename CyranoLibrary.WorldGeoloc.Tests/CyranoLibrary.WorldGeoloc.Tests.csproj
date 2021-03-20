@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Pukka.Tools.CountriesLibrary\Pukka.Tools.WorldLibrary.csproj" />
+    <ProjectReference Include="..\CyranoLibrary.WorldGeoloc\CyranoLibrary.WorldGeoloc.csproj" />
   </ItemGroup>
 
 </Project>

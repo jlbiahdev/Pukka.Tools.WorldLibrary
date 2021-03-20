@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pukka.Tools.WorldLibrary", "Pukka.Tools.CountriesLibrary\Pukka.Tools.WorldLibrary.csproj", "{C95B5155-2C43-4AE6-8C34-777D626FDF5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CyranoLibrary.WorldGeoloc", "CyranoLibrary.WorldGeoloc\CyranoLibrary.WorldGeoloc.csproj", "{C95B5155-2C43-4AE6-8C34-777D626FDF5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pukka.Tools.Tests", "Pukka.Tools.Tests\Pukka.Tools.Tests.csproj", "{93C995A0-B873-4A26-8D92-B47BD3F3F0F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyranoLibrary.WorldGeoloc.Tests", "CyranoLibrary.WorldGeoloc.Tests\CyranoLibrary.WorldGeoloc.Tests.csproj", "{93C995A0-B873-4A26-8D92-B47BD3F3F0F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

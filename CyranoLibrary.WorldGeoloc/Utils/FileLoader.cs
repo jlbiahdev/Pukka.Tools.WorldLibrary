@@ -1,10 +1,10 @@
-﻿using Pukka.Tools.Countries.Model;
+﻿using CyranoLibrary.WorldGeoloc.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Pukka.Tools.Countries.Utils
+namespace CyranoLibrary.WorldGeoloc.Utils
 {
     internal class FileLoader
     {

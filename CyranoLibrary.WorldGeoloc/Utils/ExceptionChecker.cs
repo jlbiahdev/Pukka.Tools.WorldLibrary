@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Pukka.Tools.Countries.Utils
+namespace CyranoLibrary.WorldGeoloc.Utils
 {
     internal static class ExceptionChecker
     {

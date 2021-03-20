@@ -1,8 +1,8 @@
 using NUnit.Framework;
-using Pukka.Tools.Countries;
+using CyranoLibrary.WorldGeoloc.Countries;
 using System.Threading.Tasks;
 
-namespace Pukka.Tools.Tests
+namespace CyranoLibrary.WorldGeoloc.Tests
 {
     public class WorldTest
     {

@@ -1,9 +1,9 @@
-﻿using Pukka.Tools.Countries.Model;
-using Pukka.Tools.Countries.Utils;
+﻿using CyranoLibrary.WorldGeoloc.Model;
+using CyranoLibrary.WorldGeoloc.Utils;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Pukka.Tools.Countries
+namespace CyranoLibrary.WorldGeoloc.Countries
 {
     public class GeoLibrary
     {
