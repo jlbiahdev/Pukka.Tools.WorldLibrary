@@ -1,10 +1,9 @@
 using NUnit.Framework;
-using CyranoLibrary.WorldGeoloc.Countries;
 using System.Threading.Tasks;
 
 namespace CyranoLibrary.WorldGeoloc.Tests
 {
-    public class WorldTest
+    internal class WorldTest
     {
         [SetUp]
         public void Setup()
@@ -14,8 +13,7 @@ namespace CyranoLibrary.WorldGeoloc.Tests
         [Test]
         public async Task RetrieveCities_Test()
         {
-            var lib = GeoLibrary.GetInstance();
-            await lib.InitializeAsync();
+            var lib = await GeoLocLibrary.GetInstanceAsync();
 
             var items = lib.GetCities();
 
@@ -23,11 +21,11 @@ namespace CyranoLibrary.WorldGeoloc.Tests
         }
 
         [Test]
-        public void RetrieveCities_FailWithException_Test()
+        public async Task RetrieveCities_FailWithException_Test()
         {
             try
             {
-                var lib = GeoLibrary.GetInstance();
+                var lib = await GeoLocLibrary.GetInstanceAsync();
                 var items = lib.GetCities();
 
             }
@@ -40,20 +38,18 @@ namespace CyranoLibrary.WorldGeoloc.Tests
         [Test]
         public async Task RetrieveCountries_Test()
         {
-            var lib = GeoLibrary.GetInstance();
-            await lib.InitializeAsync();
-
+            var lib = await GeoLocLibrary.GetInstanceAsync();
             var items = lib.GetCountries();
 
             Assert.IsTrue(items.Count > 0);
         }
 
         [Test]
-        public void RetrieveCountries_FailWithException_Test()
+        public async Task RetrieveCountries_FailWithException_Test()
         {
             try
             {
-                var lib = GeoLibrary.GetInstance();
+                var lib = await GeoLocLibrary.GetInstanceAsync();
                 var items = lib.GetCountries();
 
             }

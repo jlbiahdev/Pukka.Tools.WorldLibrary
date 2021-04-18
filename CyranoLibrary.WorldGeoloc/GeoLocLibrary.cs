@@ -3,27 +3,25 @@ using CyranoLibrary.WorldGeoloc.Utils;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CyranoLibrary.WorldGeoloc.Countries
+namespace CyranoLibrary.WorldGeoloc
 {
-    public class GeoLibrary
+    public class GeoLocLibrary
     {
-        private readonly FileLoader Loader = new FileLoader();
-        private static GeoLibrary _instance;
+        private static readonly FileLoader Loader = new FileLoader();
+        private static GeoLocLibrary _instance;
         private static readonly object Locker = new object();
 
-        private GeoLibrary() { }
+        private GeoLocLibrary() {
+        }
 
-        public static GeoLibrary GetInstance()
+        public static async Task<GeoLocLibrary> GetInstanceAsync()
         {
             lock(Locker)
             {
-                return _instance ??= new GeoLibrary();
+                _instance ??= new GeoLocLibrary();
             }
-        }
-
-        public async Task InitializeAsync()
-        {
             await Loader.InitializeAsync();
+            return _instance;
         }
 
         public ICollection<City> GetCities()
