@@ -35,6 +35,8 @@ namespace CyranoLibrary.WorldGeoloc.Utils
             }
         }
 
+        private readonly ResourceReader ResourceReader = new ResourceReader();
+
         internal async Task InitializeAsync()
         {
             _countries = await GetCountriesAsync();
@@ -45,14 +47,14 @@ namespace CyranoLibrary.WorldGeoloc.Utils
 
         private async Task<ICollection<Country>> GetCountriesAsync()
         {
-            var output = await Task.Run(() => JsonFileLoader.ReadAsObject<Country>(@"Data\countries.json"));
+            var output = await ResourceReader.ReadResourceAsObjectsAsync<Country>("CyranoLibrary.WorldGeoloc.Data.countries.json");
 
             return output;
         }
 
         private async Task<ICollection<City>> GetCitiesAsync()
         {
-            var output = await Task.Run(() => JsonFileLoader.ReadAsObject<City>(@"Data\cities.json"));
+            var output = await ResourceReader.ReadResourceAsObjectsAsync<City>("CyranoLibrary.WorldGeoloc.Data.cities.json");
 
             return output;
         }

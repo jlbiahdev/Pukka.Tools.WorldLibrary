@@ -1,24 +1,36 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <ApplicationIcon>cyrano.ico</ApplicationIcon>
+    <Authors>Cyrano Conseil</Authors>
+    <Copyright>Cyrano Conseil 2021</Copyright>
+    <Description>This is a Library that provides referential for cities and countries</Description>
+    <PackageProjectUrl>https://github.com/jlbiahdev/cyranolib-worldgeoloc</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jlbiahdev/cyranolib-worldgeoloc</RepositoryUrl>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <None Remove="Data\cities.json" />
+    <None Remove="Data\countries.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Data\cities.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\countries.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <EmbeddedResource Include="Data\cities.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\countries.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy $(TargetPath) $(SolutionDir)..\Packages\WorldGeoloc /y&#xD;&#xA;xcopy $(TargetDir)\Data\* $(SolutionDir)..\Packages\WorldGeoloc\Data\ /y" />
+    <Exec Command="xcopy $(TargetPath) $(SolutionDir)..\Packages\WorldGeoloc /y" />
   </Target>
 
 </Project>
