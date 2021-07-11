@@ -8,12 +8,18 @@
     <Description>This is a Library that provides referential for cities and countries</Description>
     <PackageProjectUrl>https://github.com/jlbiahdev/cyranolib-worldgeoloc</PackageProjectUrl>
     <RepositoryUrl>https://github.com/jlbiahdev/cyranolib-worldgeoloc</RepositoryUrl>
-    <Version>1.1.0</Version>
+    <Version>1.1.3.1</Version>
+    <PackageIcon>cyrano.png</PackageIcon>
+    <PackageReleaseNotes>Changes the logo</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Data\cities.json" />
     <None Remove="Data\countries.json" />
+    <None Include="..\..\logo\cyrano.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -30,7 +36,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy $(TargetPath) $(SolutionDir)..\Packages\WorldGeoloc /y" />
+    <Exec Command="if not exist &quot;$(TargetDir)win-$(PlatformName)&quot; mkdir &quot;$(TargetDir)win-$(PlatformName)&quot;&#xD;&#xA;if not exist &quot;$(TargetDir)osx-$(PlatformName)&quot; mkdir &quot;$(TargetDir)osx-$(PlatformName)&quot;&#xD;&#xA;if not exist &quot;$(TargetDir)linux-$(PlatformName)&quot; mkdir &quot;$(TargetDir)linux-$(PlatformName)&quot;&#xD;&#xA;xcopy $(TargetDir)*.* &quot;$(TargetDir)win-$(PlatformName)&quot; /y&#xD;&#xA;xcopy $(TargetDir)*.* &quot;$(TargetDir)osx-$(PlatformName)&quot; /y&#xD;&#xA;xcopy $(TargetDir)*.* &quot;$(TargetDir)linux-$(PlatformName)&quot; /y" />
   </Target>
 
 </Project>
